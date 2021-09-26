@@ -8,15 +8,15 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+         Student. EES
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://student-ees.netlify.app"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          One Day ... to Day One.
         </a>
       </header>
     </div>
