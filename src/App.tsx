@@ -21,7 +21,7 @@ const App = () => {
     <div className="App">
       <Home />
       <div className="py-4"> {/*  Tailwind class */}
-        <Button variant="outlined" onClick={()=>buttonText=="Let's Start" ? setButtonText("From One day .. to Day 1"): setButtonText("Let's Start")}>{buttonText}</Button>
+        <Button variant="outlined" onClick={()=> buttonText==="Let's Start" ? setButtonText("From One day .. to Day 1"): setButtonText("Let's Start")}>{buttonText}</Button>
       </div>
       <Typography variant="h4" >
         Test redux
