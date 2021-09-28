@@ -1,29 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { Button } from '@mui/material';
+import { Button, Typography } from '@mui/material';
+import Home from './app/Components';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectCount } from './app/Store/App/common/selectors';
+import { setCount } from './app/Store/App/common/slice';
 
-function App() {
+const App = () => {
+  
+  const count = useSelector(selectCount)
+  const dispatch = useDispatch();
+
+  const handleAdd = () => {
+    dispatch(setCount(count+1));
+  }
+  const handleSub = () => {
+    dispatch(setCount(count-1));
+  }
   return (
-    <div className="App ">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-         Student. EES
-        </p>
-        <a
-          className="App-link"
-          href="https://student-ees.netlify.app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          One Day ... to Day One.
-        </a>
-      </header>
+    <div className="App">
+      <Home />
       <div className="py-4"> {/*  Tailwind class */}
         <Button variant="outlined">Let's Start</Button>
       </div>
-      
+      <Typography variant="h4" >
+        Test redux
+      </Typography>
+      <div className="py-4 space-x-4"> {/*  Tailwind class */}
+        <Button variant="outlined" className="font-extrabold" onClick={handleAdd} value="add"><Typography variant="h4" > + </Typography></Button>
+        <Button variant="outlined" className="font-extrabold" onClick={handleSub} value="sub"><Typography variant="h4" > - </Typography></Button>
+      </div>
+      <Typography variant="h4" >
+        {count}
+      </Typography>
     </div>
   );
 }
