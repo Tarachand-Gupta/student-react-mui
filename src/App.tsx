@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Button, Typography } from '@mui/material';
-import Home from './app/Components';
+import Home from './app/Pages';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectCount } from './app/Store/App/common/selectors';
 import { setCount } from './app/Store/App/common/slice';
