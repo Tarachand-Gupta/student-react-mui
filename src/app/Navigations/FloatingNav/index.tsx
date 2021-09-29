@@ -1,6 +1,7 @@
 import React from 'react'
 import ButtonUnstyled, { ButtonUnstyledProps} from '@mui/core/ButtonUnstyled';
 import AppsRoundedIcon from '@mui/icons-material/AppsRounded';
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import { styled } from '@mui/system';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectNavbarOpen } from '../../Store/App/common/selectors';
@@ -38,7 +39,7 @@ function FloatingNav( { show }: NavProps) {
     return (
         <div className={`sticky top-6 left-5 max-w-max ${!show && "hidden"} `}>
             <CustomButton onClick={()=>dispatch(setNavbarOpen(!navbarOpen))}>
-                <AppsRoundedIcon /> Student.
+                {navbarOpen ? <CloseRoundedIcon style={{color: "white"}} /> : <AppsRoundedIcon />} Student.
             </CustomButton>
         </div>
     )
