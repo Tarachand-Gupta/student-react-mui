@@ -11,7 +11,7 @@ export type NavMenuProps = {
 function NavMenu( { show }: NavMenuProps) {
 
     const navbarOpen = useSelector(selectNavbarOpen)
-    const menuCount = [1,2,3,4,5,6,7,8,9]
+    const menuCount = ["Notice","Feed","Chats","Notes","Atendance","Events","Profile","Current Affairs","Account"]
     return (
         <>
             <div className={`w-full h-full fixed block top-0 left-0 bg-white z-50 overflow-hidden ${!navbarOpen && "hidden"}`}>
