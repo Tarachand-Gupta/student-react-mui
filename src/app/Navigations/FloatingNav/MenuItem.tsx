@@ -5,12 +5,6 @@ interface CompProps {
     value?: number | string;
   }
 
-type I = {
-    apparel: any,
-    mac: any,
-    cars: any
-}
-
 function MenuItem({ childComp, value }:CompProps) {
 
     return (
