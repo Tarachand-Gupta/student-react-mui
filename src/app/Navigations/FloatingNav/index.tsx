@@ -15,7 +15,7 @@ function FloatingNav( { show }: NavProps) {
     const navbarOpen = useSelector(selectNavbarOpen)
     const dispatch = useDispatch()
     const CustomButtonRoot = styled('span')(`
-        background-color: #007fff;
+        background-color: ${!navbarOpen ? "#007fff" : "#e57373"};
         padding: 15px 15px;
         border-radius: 10px;
         color: #fff;
@@ -28,7 +28,7 @@ function FloatingNav( { show }: NavProps) {
         border: none;
     
         &:hover {
-        background-color: #0059b2;
+        background-color: ${!navbarOpen ? "#0059b2" : "#ef5350"};
         }
     `);
     function CustomButton(props: ButtonUnstyledProps) {
