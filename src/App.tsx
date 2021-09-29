@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectCount } from './app/Store/App/common/selectors';
 import { setCount } from './app/Store/App/common/slice';
 import FloatingNav from './app/Navigations/FloatingNav';
+import NavMenu from './app/Navigations/FloatingNav/NavMenu';
 
 const App = () => {
   const [buttonText, setButtonText] = useState("Let's Start")
@@ -19,8 +20,9 @@ const App = () => {
     dispatch(setCount(count-1));
   }
   return (
-  <>
+  <React.Fragment>
     <FloatingNav show={true}/>
+    <NavMenu show={true}/>
     <div className="py-4"></div>
       <div className="App">
         <Home />
@@ -142,7 +144,7 @@ const App = () => {
           {count}
         </Typography>
       </div>
-    </>
+    </React.Fragment>
   );
 }
 
