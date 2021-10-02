@@ -1,22 +1,23 @@
 import React from 'react'
-import ButtonUnstyled, { ButtonUnstyledProps} from '@mui/core/ButtonUnstyled';
+import ButtonUnstyled, { ButtonUnstyledProps } from '@mui/core/ButtonUnstyled';
 import AppsRoundedIcon from '@mui/icons-material/AppsRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import { styled } from '@mui/system';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectNavbarOpen } from '../../Store/App/common/selectors';
-import { setNavbarOpen } from '../../Store/App/common/slice';
+import { selectCurrentNavigation, selectNavbarOpen } from '../../Store/App/navigation/selectors';
+import { setNavbarOpen } from '../../Store/App/navigation/slice';
 
 export type NavProps = {
     show: boolean;
 }
 
-function FloatingNav( { show }: NavProps) {
+function FloatingNav({ show }: NavProps) {
 
     const navbarOpen = useSelector(selectNavbarOpen)
+    const currentNavigation = useSelector(selectCurrentNavigation)
     const dispatch = useDispatch()
     const CustomButtonRoot = styled('span')(`
-        background-color: ${!navbarOpen ? "#007fff" : "#e57373"};
+        background-color: ${!navbarOpen ? "#007fff" : "#ef5350"};
         padding: 15px 15px;
         border-radius: 10px;
         color: #fff;
@@ -29,17 +30,22 @@ function FloatingNav( { show }: NavProps) {
         border: none;
     
         &:hover {
-        background-color: ${!navbarOpen ? "#0059b2" : "#ef5350"};
+        background-color: ${!navbarOpen ? "#0059b2" : "#e57373"};
         }
     `);
     function CustomButton(props: ButtonUnstyledProps) {
         return <ButtonUnstyled {...props} component={CustomButtonRoot} />;
-      }
+    }
 
     return (
         <div className={`sticky top-6 left-5 max-w-max ${!show && "hidden"} `}>
-            <CustomButton onClick={()=>dispatch(setNavbarOpen(!navbarOpen))}>
-                {navbarOpen ? <CloseRoundedIcon style={{color: "white"}} /> : <AppsRoundedIcon />} Student.
+            <CustomButton onClick={() => dispatch(setNavbarOpen(!navbarOpen))}>
+                {
+                    navbarOpen 
+                    ? <CloseRoundedIcon /> 
+                    : <AppsRoundedIcon />
+                } {"  "}
+                {navbarOpen ? "Student." : currentNavigation}
             </CustomButton>
         </div>
     )
