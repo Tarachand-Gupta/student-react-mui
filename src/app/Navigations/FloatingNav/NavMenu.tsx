@@ -1,7 +1,10 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 import FloatingNav from '.';
-import DashboardRoundedIcon from '@mui/icons-material/DashboardRounded';
+import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
+import { FcHome, FcSms, FcViewDetails, FcTemplate, FcBullish, FcDataSheet, FcBusinessman, FcSettings } from "react-icons/fc";
+
+
 import MenuItem from './MenuItem';
 import { selectNavbarOpen } from '../../Store/App/navigation/selectors';
 export type NavMenuProps = {
@@ -14,49 +17,54 @@ function NavMenu({ show }: NavMenuProps) {
     const menuItems = [
         {
             value: "Home",
-            pathName: "/"
+            pathName: "/",
+            icon: <FcHome size={45} />
         },
         {
             value: "Notice",
-            pathName: "/noticeboard"
+            pathName: "/noticeboard",
+            icon: <FcTemplate size={45} />
         },
         {
             value: "Chats",
-            pathName: "/chats"
+            pathName: "/chats",
+            icon: <FcSms size={45} />
         },
         {
             value: "Notes",
-            pathName: "/notes"
+            pathName: "/notes",
+            icon: <FcViewDetails size={45} />
         },
         {
-            value: "Attendance",
-            pathName: "/attendance"
+            value: "Stats",
+            pathName: "/stats",
+            icon: <FcBullish size={45} />
         },
         {
             value: "Events",
-            pathName: "/event"
+            pathName: "/event",
+            icon: <FcDataSheet size={45} />
         },
         {
             value: "Profile",
-            pathName: "/profile"
-        },
-        {
-            value: "Current Affairs",
-            pathName: "/currentaffairs"
+            pathName: "/profile",
+            icon: <FcBusinessman size={45} />
         },
         {
             value: "Account",
-            pathName: "/account"
+            pathName: "/account",
+            icon: <FcSettings size={45} />
         },
+        
     ]
     return (
         <>
-            <div className={`w-full h-full fixed block top-0 left-0 bg-white z-50 overflow-hidden animate-fade ${!navbarOpen && "hidden"}`}>
+            <div className={`w-full h-full fixed block top-0 left-0 bg-white z-50 overflow-hidden ${!navbarOpen && "hidden"}`}>
                 <FloatingNav show={true} />
                 <div className="mt-14 grid gap-4 grid-cols-3 justify-items-center">
                     {
-                        menuItems.map(({ value, pathName }) => (
-                            <MenuItem iconComp={<DashboardRoundedIcon />} value={value} pathName={pathName} />
+                        menuItems.map(({ value, pathName, icon }) => (
+                            <MenuItem icon={icon} value={value} pathName={pathName} />
                         ))
                     }
                 </div>
