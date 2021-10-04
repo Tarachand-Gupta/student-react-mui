@@ -26,7 +26,7 @@ function FloatingNav({ show }: NavProps) {
         font-size: 14px;
         transition: all 200ms ease;
         cursor: pointer;
-        box-shadow: 0 4px 20px 0 ${!navbarOpen ? "rgb(0,127,255, 0.3)" : "rgb(239,83,80, 0.35)"}, 0 0 0 0 rgb(0,127,255);
+        box-shadow: 0 4px 20px 0 ${!navbarOpen ? "rgb(0,127,255, 0.25)" : "rgb(239,83,80, 0.25)"}, 0 0 0 0 rgb(0,127,255);
         border: none;
     
         &:hover {

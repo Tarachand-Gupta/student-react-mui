@@ -81,7 +81,7 @@ function ChatList() {
         )
     }
     return (
-        <div className=" mx-auto rounded-lg  overflow-hidden md:max-w-lg px-5 pb-5">
+        <div className=" mx-auto rounded-lg  overflow-hidden md:max-w-lg px-5">
             <div className="flex">
                 <div className="w-full ">
                     {dummyListItems()}
