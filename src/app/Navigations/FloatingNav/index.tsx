@@ -26,11 +26,11 @@ function FloatingNav({ show }: NavProps) {
         font-size: 14px;
         transition: all 200ms ease;
         cursor: pointer;
-        box-shadow: 0 4px 20px 0 rgba(61, 71, 82, 0.1), 0 0 0 0 rgba(0, 127, 255, 0);
+        box-shadow: 0 4px 20px 0 ${!navbarOpen ? "rgb(0,127,255, 0.3)" : "rgb(239,83,80, 0.35)"}, 0 0 0 0 rgb(0,127,255);
         border: none;
     
         &:hover {
-        background-color: ${!navbarOpen ? "#0059b2" : "#e57373"};
+            background-color: ${!navbarOpen ? "#0059b2" : "#e57373"};
         }
     `);
     function CustomButton(props: ButtonUnstyledProps) {

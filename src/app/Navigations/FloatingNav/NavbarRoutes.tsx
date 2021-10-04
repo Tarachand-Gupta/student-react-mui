@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import FloatingNav from ".";
 import Home from "../../Pages";
+import Messaging from "../../Pages/Common/Messaging/Messaging";
 import Noticeboard from "../../Pages/Common/Noticeboard/Noticeboard";
 import NavMenu from "./NavMenu";
 
@@ -19,6 +20,11 @@ const NavbarRoutes = () => {
         <Route path="/noticeboard" exact>
           <Noticeboard />
         </Route>
+
+        <Route path="/messaging" exact>
+          <Messaging />
+        </Route>
+
       </Switch>
     </Router>
   );
