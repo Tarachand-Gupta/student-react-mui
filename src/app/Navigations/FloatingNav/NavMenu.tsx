@@ -25,8 +25,8 @@ function NavMenu({ show }: NavMenuProps) {
             icon: <FcTemplate size={45} />
         },
         {
-            value: "Chats",
-            pathName: "/chats",
+            value: "Messages",
+            pathName: "/messaging",
             icon: <FcSms size={45} />
         },
         {
