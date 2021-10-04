@@ -1,12 +1,10 @@
 import React from 'react'
-import ChatList from './ChatList';
-import SearchBox from './SearchBox';
+import MessagingRoutes from './MessagingRoutes'
 
 function Messaging() {
     return (
         <div>
-            <SearchBox />
-            <ChatList />
+            <MessagingRoutes />
         </div>
     )
 }

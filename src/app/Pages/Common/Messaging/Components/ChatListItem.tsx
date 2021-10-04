@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useRouteMatch } from 'react-router-dom'
 
 type props = {
     img: string;
@@ -9,9 +9,11 @@ type props = {
     time: string;
 }
 function ChatListItem( {img, name, id, previewMsg, time}: props) {
+    let { url } = useRouteMatch();
+
     return (
-        <Link to="/">
-        <li className="flex justify-between items-center bg-white mt-2 p-2 pt-4 hover:shadow-md rounded-lg cursor-pointer transition">
+        <Link to={`${url}/${name}`}>
+        <li className="flex justify-between items-center bg-white mb-2 p-2 pt-4 hover:shadow-md rounded-lg cursor-pointer transition">
             <div className="flex ml-1"> <img alt="avatar-img" src={img} width="40" height="40" className="rounded-full" />
                 <div className="flex flex-col ml-5"> <span className="font-medium text-black text-left">{name}</span> <span className="text-sm text-gray-400 truncate w-32">{previewMsg}</span> </div>
             </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import FloatingNav from "./FloatingNav";
 import Home from "../../Pages";
 import Messaging from "../../Pages/Common/Messaging/Messaging";
@@ -21,11 +21,11 @@ const NavbarRoutes = () => {
           <Noticeboard />
         </Route>
 
-        <Route path="/messaging" exact>
+        <Route path="/messaging" >
           <Messaging />
         </Route>
 
-        <Redirect to='/' />
+
       </Switch>
     </Router>
   );
