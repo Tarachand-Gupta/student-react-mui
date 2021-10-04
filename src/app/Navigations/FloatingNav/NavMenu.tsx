@@ -20,7 +20,7 @@ function NavMenu({ show }: NavMenuProps) {
             icon: <FcHome size={45} />
         },
         {
-            value: "Notice",
+            value: "Noticeboard",
             pathName: "/noticeboard",
             icon: <FcTemplate size={45} />
         },
