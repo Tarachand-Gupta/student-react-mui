@@ -16,42 +16,42 @@ function NavMenu({ show }: NavMenuProps) {
         {
             value: "Home",
             pathName: "/",
-            icon: <FcHome size={"50%"} />
+            icon: <FcHome size={"40%"} />
         },
         {
             value: "Noticeboard",
             pathName: "/noticeboard",
-            icon: <FcTemplate size={"50%"} />
+            icon: <FcTemplate size={"40%"} />
         },
         {
             value: "Messages",
             pathName: "/messaging",
-            icon: <FcSms size={"50%"} />
+            icon: <FcSms size={"40%"} />
         },
         {
             value: "Notes",
             pathName: "/notes",
-            icon: <FcViewDetails size={"50%"} />
+            icon: <FcViewDetails size={"40%"} />
         },
         {
             value: "Stats",
             pathName: "/stats",
-            icon: <FcBullish size={"50%"} />
+            icon: <FcBullish size={"40%"} />
         },
         {
             value: "Events",
             pathName: "/event",
-            icon: <FcDataSheet size={"50%"} />
+            icon: <FcDataSheet size={"40%"} />
         },
         {
             value: "Profile",
             pathName: "/profile",
-            icon: <FcBusinessman size={"50%"} />
+            icon: <FcBusinessman size={"40%"} />
         },
         {
             value: "Account",
             pathName: "/account",
-            icon: <FcSettings size={"50%"} />
+            icon: <FcSettings size={"40%"} />
         },
 
     ]
