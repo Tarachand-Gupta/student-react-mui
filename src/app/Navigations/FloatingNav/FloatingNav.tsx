@@ -23,7 +23,7 @@ function FloatingNav({ show }: NavProps) {
         color: #fff;
         font-weight: 600;
         font-family: Helvetica, Arial, sans-serif;
-        font-size: 14px;
+        font-size: 1.3em;
         transition: all 200ms ease;
         cursor: pointer;
         box-shadow: 0 4px 20px 0 ${!navbarOpen ? "rgb(0,127,255, 0.25)" : "rgb(239,83,80, 0.25)"}, 0 0 0 0 rgb(0,127,255);
@@ -38,7 +38,7 @@ function FloatingNav({ show }: NavProps) {
     }
 
     return (
-        <div className={`sticky top-6 left-5 max-w-max ${!show && "hidden"} `}>
+        <div className={`sticky top-6 left-5 max-w-max ${!show && "hidden"} z-50`}>
             <CustomButton onClick={() => dispatch(setNavbarOpen(!navbarOpen))}>
                 {
                     navbarOpen 

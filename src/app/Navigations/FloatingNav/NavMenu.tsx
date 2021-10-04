@@ -17,50 +17,50 @@ function NavMenu({ show }: NavMenuProps) {
         {
             value: "Home",
             pathName: "/",
-            icon: <FcHome size={45} />
+            icon: <FcHome size={"50%"} />
         },
         {
             value: "Noticeboard",
             pathName: "/noticeboard",
-            icon: <FcTemplate size={45} />
+            icon: <FcTemplate size={"50%"} />
         },
         {
             value: "Messages",
             pathName: "/messaging",
-            icon: <FcSms size={45} />
+            icon: <FcSms size={"50%"} />
         },
         {
             value: "Notes",
             pathName: "/notes",
-            icon: <FcViewDetails size={45} />
+            icon: <FcViewDetails size={"50%"} />
         },
         {
             value: "Stats",
             pathName: "/stats",
-            icon: <FcBullish size={45} />
+            icon: <FcBullish size={"50%"} />
         },
         {
             value: "Events",
             pathName: "/event",
-            icon: <FcDataSheet size={45} />
+            icon: <FcDataSheet size={"50%"} />
         },
         {
             value: "Profile",
             pathName: "/profile",
-            icon: <FcBusinessman size={45} />
+            icon: <FcBusinessman size={"50%"} />
         },
         {
             value: "Account",
             pathName: "/account",
-            icon: <FcSettings size={45} />
+            icon: <FcSettings size={"50%"} />
         },
 
     ]
     return (
         <>
-            <div className={`w-full h-full fixed block top-0 left-0 bg-white z-50 overflow-hidden ${!navbarOpen && "hidden"}`}>
-                <FloatingNav show={true} />
-                <div className="mt-14 grid gap-4 grid-cols-3 justify-items-center">
+            <div className={`w-full h-full fixed block top-0 left-0 bg-white z-10 overflow-scroll ${!navbarOpen && "hidden"}`} style={{fontSize: '3vmax'}}>
+                {/* <FloatingNav show={true} /> */}
+                <div className="mt-14 grid gap-3 grid-cols-2 sm:grid-cols-3 justify-items-center pb-8">
                     {
                         menuItems.map(({ value, pathName, icon }) => (
                             <MenuItem icon={icon} value={value} pathName={pathName} />
