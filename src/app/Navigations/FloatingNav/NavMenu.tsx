@@ -1,7 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 import FloatingNav from '.';
-import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import { FcHome, FcSms, FcViewDetails, FcTemplate, FcBullish, FcDataSheet, FcBusinessman, FcSettings } from "react-icons/fc";
 
 
@@ -55,7 +54,7 @@ function NavMenu({ show }: NavMenuProps) {
             pathName: "/account",
             icon: <FcSettings size={45} />
         },
-        
+
     ]
     return (
         <>
