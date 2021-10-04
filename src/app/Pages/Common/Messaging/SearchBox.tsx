@@ -3,10 +3,10 @@ import { FiSearch } from "react-icons/fi";
 
 function SearchBox() {
     return (
-        <div className="flex md:max-w-lg mx-auto px-2 pt-3">
+        <div className="flex md:max-w-lg mx-auto px-2 pt-4">
             <div className="flex-grow h-18 pl-2 ">
                 <div className="px-1">
-                    <div className="bg-white flex items-center rounded-lg shadow-lg">
+                    <div className="bg-white flex items-center rounded-lg shadow-md">
                         <input className="rounded-lg w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none" id="search" type="text" placeholder="Search" />
                     </div>
                 </div>
