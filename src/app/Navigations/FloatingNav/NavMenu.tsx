@@ -1,6 +1,5 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
-import FloatingNav from './FloatingNav';
 import { FcHome, FcSms, FcViewDetails, FcTemplate, FcBullish, FcDataSheet, FcBusinessman, FcSettings } from "react-icons/fc";
 
 
