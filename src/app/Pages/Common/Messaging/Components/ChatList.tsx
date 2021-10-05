@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectConversations } from '../../../../Store/App/messaging/selectors'
 import { setConversations } from '../../../../Store/App/messaging/slice'
@@ -9,6 +9,7 @@ function ChatList() {
 
     const dispatch = useDispatch()
     const conversations = useSelector(selectConversations)
+    const loading= true;
     const chatListItems = [
         {
             image: "https://i.imgur.com/aq39RMA.jpg",
@@ -95,18 +96,16 @@ function ChatList() {
             time: "3:26"
         },
     ]
-
     const getMessages = () => {
-        // const conversations = await axios.get("/getConversations", userId)
-        // dispatch(setConversations(conversations))
-        dispatch(setConversations(chatListItems))
-    }
-
-
+            // const conversations = await axios.get("/getConversations", userId)
+            // dispatch(setConversations(conversations))
+            dispatch(setConversations(chatListItems))
+        }
+       
     useEffect(() => {
-        getMessages();
         
-    }, []);
+        getMessages(); // eslint-disable-next-line 
+    },[loading]);
 
 
     return (
