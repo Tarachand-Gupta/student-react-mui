@@ -62,7 +62,7 @@ function NavMenu({ show }: NavMenuProps) {
                 <div className="mt-14 grid gap-3 grid-cols-2 sm:grid-cols-3 justify-items-center pb-8">
                     {
                         menuItems.map(({ value, pathName, icon }) => (
-                            <MenuItem icon={icon} value={value} pathName={pathName} />
+                            <MenuItem key={value} icon={icon} value={value} pathName={pathName} />
                         ))
                     }
                 </div>

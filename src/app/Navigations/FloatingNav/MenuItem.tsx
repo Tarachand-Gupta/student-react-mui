@@ -22,7 +22,7 @@ function MenuItem({ icon, value, pathName }: CompProps) {
     }
 
     return (
-        <div key={value} className="mt-8">
+        <div className="mt-8">
             <Link to={pathName} 
             onClick={()=>handleOpenMenu(value, pathName)}
             >
