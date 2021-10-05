@@ -4,6 +4,8 @@ export type Conversation = {
   id: string,
   name: string,
   image: string,
+  previewMsg: string,
+  time: string;
 }
 
 export type MessagingSlice = {
