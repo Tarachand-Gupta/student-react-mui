@@ -56,10 +56,9 @@ function NavMenu({ show }: NavMenuProps) {
 
     ]
     return (
-        <>
-            <div className={`w-full h-full fixed block top-0 left-0 bg-white z-10 overflow-scroll ${!navbarOpen && "hidden"}`} style={{fontSize: '3vmax'}}>
-                {/* <FloatingNav show={true} /> */}
-                <div className="mt-14 grid gap-3 grid-cols-2 sm:grid-cols-3 justify-items-center pb-8">
+        <React.Fragment>
+            <div className={`w-full h-screen fixed block top-0 left-0 bg-white z-10 overflow-scroll ${!navbarOpen && "hidden"}`} style={{fontSize: '3vmax'}}>
+                <div className="mt-14 grid gap-3 grid-cols-2 sm:grid-cols-3 sm:px-1 px-6 justify-items-center pb-8">
                     {
                         menuItems.map(({ value, pathName, icon }) => (
                             <MenuItem key={value} icon={icon} value={value} pathName={pathName} />
@@ -67,7 +66,7 @@ function NavMenu({ show }: NavMenuProps) {
                     }
                 </div>
             </div>
-        </>
+        </React.Fragment>
     )
 }
 

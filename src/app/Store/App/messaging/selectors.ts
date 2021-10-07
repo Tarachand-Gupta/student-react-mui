@@ -18,3 +18,8 @@ export const selectCurrentConversation = createSelector(
   [messagingSlice],
   (state) => state.currentConversation
 );
+
+export const selectConversationSearchboxText = createSelector(
+  [messagingSlice],
+  (state) => state.conversationSearchboxText
+);
