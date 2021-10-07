@@ -8,7 +8,7 @@ function SearchBox() {
     const dispatch = useDispatch()
     const searchText = useSelector(selectConversationSearchboxText);
     return (
-        <div className="flex md:max-w-lg mx-auto px-2 pt-4">
+        <div className="flex md:max-w-lg mx-auto px-2 pt-6">
             <div className="flex-grow h-18 pl-2 ">
                 <div className="px-1">
                     <div className="bg-white flex items-center rounded-lg shadow-md">
