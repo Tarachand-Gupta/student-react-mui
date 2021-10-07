@@ -141,7 +141,6 @@ function Home() {
     }
     return (
         <div className="my-3">
-            {/* /Student and /Teacher Folders will contain User Specific Modules */}
             <Typography variant="h3" >
                 Home
             </Typography>

@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { selectConversations } from '../../../../Store/App/messaging/selectors'
+import Loader from '../../../../Components/Loader'
+import { useReactQuery } from '../../../../hooks/useReactQuery'
+import { selectConversations, selectConversationSearchboxText } from '../../../../Store/App/messaging/selectors'
 import { setConversations } from '../../../../Store/App/messaging/slice'
 import ChatListItem from './ChatListItem'
 import SearchBox from './SearchBox'
@@ -9,7 +11,7 @@ function ChatList() {
 
     const dispatch = useDispatch()
     const conversations = useSelector(selectConversations)
-    const loading= true;
+    const searchText = useSelector(selectConversationSearchboxText)
     const chatListItems = [
         {
             image: "https://i.imgur.com/aq39RMA.jpg",
@@ -23,7 +25,7 @@ function ChatList() {
             name: "Komeial Bolger",
             id: "2",
             previewMsg: "I will send you all documents as soon as possible",
-            time: "12:2"
+            time: "12:20"
         },
         {
             image: "https://i.imgur.com/zQZSWrt.jpg",
@@ -96,6 +98,15 @@ function ChatList() {
             time: "3:26"
         },
     ]
+
+    const { data, isLoading, error } = useReactQuery(['conversations', searchText], {
+        url: '/messageAction/getAllChatDetails',
+        params: {
+            id: "5e3537a9b29cf92840171f3f"
+        },
+    });
+    console.log(data);
+
     const getMessages = () => {
             // const conversations = await axios.get("/getConversations", userId)
             // dispatch(setConversations(conversations))
@@ -105,25 +116,32 @@ function ChatList() {
     useEffect(() => {
         
         getMessages(); // eslint-disable-next-line 
-    },[loading]);
-
+    }, [searchText]);
 
     return (
         <div>
             <SearchBox />
-            <div className=" mx-auto rounded-lg  overflow-hidden md:max-w-lg px-5">
-                <div className="flex">
-                    <div className="w-full ">
-                        {
-                            conversations.map(({ image, name, id, previewMsg, time }) => (
-                                <ChatListItem key={id} img={image} id={id} name={name} time={time} previewMsg={previewMsg} />
-                            ))
-                        }
+            {
+                error && <p>Error occured while fetching the data</p>
+            }{
+                isLoading && <Loader />
+            }
+            {
+
+                <div className=" mx-auto rounded-lg overflow-hidden md:max-w-lg px-5">
+                    <div className="flex">
+                        <div className="w-full overflow-scroll ">
+                            {
+                                conversations.map(({ image, name, id, previewMsg, time }) => (
+                                        <ChatListItem key={id} image={image} id={id} name={name} time={time} previewMsg={previewMsg} />
+                                    ))
+                            }
+                        </div>
                     </div>
                 </div>
-            </div>
+            }
         </div>
     )
 }
 
-export default React.forwardRef(ChatList)
+export default ChatList

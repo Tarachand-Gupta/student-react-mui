@@ -18,7 +18,6 @@ function MenuItem({ icon, value, pathName }: CompProps) {
             dispatch(setCurrentNavigation("Student."))
         else
             dispatch(setCurrentNavigation(value))
-
     }
 
     return (
@@ -26,7 +25,7 @@ function MenuItem({ icon, value, pathName }: CompProps) {
             <Link to={pathName} 
             onClick={()=>handleOpenMenu(value, pathName)}
             >
-                <div className="center sm:p-0 p-3" key={value}>
+                <div className="center sm:p-0 p-4" key={value}>
                     {icon}
                 </div>
                 <div className="text-center">

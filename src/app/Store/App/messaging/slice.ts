@@ -12,12 +12,14 @@ export type MessagingSlice = {
   conversations: Conversation[];
   isLoadingConversations: boolean;
   currentConversation: Conversation | null;
+  conversationSearchboxText: string;
 };
 
 export const initialState: MessagingSlice = {
   conversations: [],
   isLoadingConversations: true,
-  currentConversation: null
+  currentConversation: null,
+  conversationSearchboxText: ""
 };
 
 const slice = createSlice({
@@ -33,6 +35,9 @@ const slice = createSlice({
     setCurrentConversation: (state: MessagingSlice, action: any) => {
       state.currentConversation = action.payload;
     },
+    setConversationSearchboxText: (state: MessagingSlice, action: any) => {
+      state.conversationSearchboxText = action.payload;
+    },
   },
 });
 
@@ -40,6 +45,7 @@ export const {
   setConversations,
   setIsLoadingConversations,
   setCurrentConversation,
+  setConversationSearchboxText,
 } = slice.actions;
 
 export default slice.reducer;
