@@ -11,10 +11,10 @@ function MenuItem({ childComp, value }:CompProps) {
         <div key={value} className="mt-8">
             <div className="text-center" key={value}>
                 {childComp}
-            </div>
-            <div className="text-center">
+            </div> 
+            <div className="text-center"> 
                 {value}
-            </div>
+            </div><div></div>
         </div>
     )
 }
